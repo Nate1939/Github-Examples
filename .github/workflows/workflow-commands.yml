@@ -18,3 +18,5 @@ jobs:
       - name: step 2
         run: |
           echo $MY_VAL
+          echo "See all github env vars"
+          echo $GITHUB_ENV
