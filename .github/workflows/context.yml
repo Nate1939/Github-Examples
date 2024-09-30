@@ -7,4 +7,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: "My step"
-        run: echo "Hello, {{ github.action }}"
+        run: echo "Hello, ${{ github.action }}"
