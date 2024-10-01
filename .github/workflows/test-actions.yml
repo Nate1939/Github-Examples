@@ -15,6 +15,8 @@ jobs:
           pwd
           echo "Here are files and folders"
           ls -la
+          ls -la ../
+          ls -la ../../
       - name: Checkout repo
         uses: actions/checkout@v2
       - name: Show pwd and list files and folders AFTER repo checkout
@@ -23,5 +25,5 @@ jobs:
           pwd
           echo "Here are files and folders"
           ls -la
-      - name: Is docker installed
+      - name: Is docker installed by default
         run: docker --version
