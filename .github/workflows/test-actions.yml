@@ -17,6 +17,7 @@ jobs:
           ls -la
           ls -la ../
           ls -la ../../
+          docker ps -a
       - name: Checkout repo
         uses: actions/checkout@v2
       - name: Show pwd and list files and folders AFTER repo checkout
