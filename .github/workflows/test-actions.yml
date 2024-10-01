@@ -11,17 +11,17 @@ jobs:
     steps:
       - name: Show pwd and list files and folders BEFORE repo checkout
         run: |
-          'echo "Here is the pwd:"'
+          echo "Here is the pwd:"
           pwd
-          'echo "Here are files and folders"'
+          echo "Here are files and folders"
           ls -la
       - name: Checkout repo
         uses: actions/checkout@v2
       - name: Show pwd and list files and folders AFTER repo checkout
         run: |
-          'echo "Here is the pwd:"'
+          echo "Here is the pwd:"
           pwd
-          'echo "Here are files and folders"'
+          echo "Here are files and folders"
           ls -la
       - name: Is docker installed
         run: docker --version
