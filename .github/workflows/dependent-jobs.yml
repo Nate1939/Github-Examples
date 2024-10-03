@@ -7,7 +7,7 @@ on:
 
 jobs:
   deploy:
-    needs: [test]
+    needs: [build, test]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -28,4 +28,4 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
       - name: Test application
-        run: csbdj echo "Running tests..."
+        run: echo "Running tests..."
