@@ -1,0 +1,36 @@
+name: Dependent jobs testing
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  jobA:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: put in a sleep
+        run: sleep 1s
+      - name: Deploy application
+        run: echo "Deploying to production..."
+      - name: force failure
+        run: exit 1
+  jobB:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: put in a sleep
+        run: sleep 10s
+      - name: Build application
+        run: echo "Building the application..."
+  jobC:
+    needs: jobB
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Test application
+        run: echo "Running tests..."
