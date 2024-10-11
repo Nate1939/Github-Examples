@@ -26,8 +26,7 @@ jobs:
         run: sleep 10s
       - name: Build application
         run: echo "Building the application..."
-      - name: tving failure
-        run: exit 1
+
   jobC:
     needs: jobB
     runs-on: ubuntu-latest
